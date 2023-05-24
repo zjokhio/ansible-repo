@@ -1,5 +1,5 @@
 - name: Install Apache HTTP Server
-  hosts: web_servers
+  hosts: all
   become: true
   tasks:
     - name: Update apt cache
