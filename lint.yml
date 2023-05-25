@@ -1,0 +1,7 @@
+- name: Lint Check
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Execute Lint Check
+      command: ansible-lint install-apache2
+
