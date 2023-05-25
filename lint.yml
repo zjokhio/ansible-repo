@@ -6,7 +6,7 @@
   tasks:
     - name: install ansible lint
       apk:
-        name: ansible-lint,jsonschema
+        name: ansible-lint,py3-jsonschema,py3-pip
         update_cache: true
     - name: Execute Lint Check
       command: ansible-lint --skip-list  fqcn-builtins install-apache2
