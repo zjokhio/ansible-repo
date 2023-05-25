@@ -1,6 +1,10 @@
 ---
 # tasks file for ansible-role-fluentbit
 
+- name: lint apache2
+  include_tasks: 'apache2-lint.yml'
+  tags: ['lint']
+
 - name: Install apache2
   include_tasks: 'install-{{ ansible_os_family }}.yml'
   tags: ['install']

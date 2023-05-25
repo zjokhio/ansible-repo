@@ -1,0 +1,5 @@
+---
+
+- name: Lint Check
+  command: ansible-lint {{ playbook_dir }}/install-apache2
+
