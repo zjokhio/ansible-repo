@@ -15,4 +15,4 @@
         - {"Name": "stdout", "Match": "*"}
       fluentbit_additional_conf_files:
         - name: cpu.conf
-          template: '{{ playbook_dir }}/molecule/default/templates/cpu.conf.j2'
+          template: '{{ playbook_dir }}/ansible-role-fluentbit/molecule/default/templates/cpu.conf.j2'
