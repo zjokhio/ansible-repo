@@ -3,6 +3,7 @@
   user: zaheer
   become: yes
   roles:
+    - role: install-apache2
     - role: ansible-role-fluentbit
       fluentbit_service_flush_seconds: 5
       fluentbit_service_log_level: info
