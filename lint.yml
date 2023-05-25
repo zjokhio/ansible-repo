@@ -1,5 +1,5 @@
 - name: Lint Check
-  hosts: all
+  hosts: localhost
   gather_facts: false
   tasks:
     - name: Execute Lint Check
