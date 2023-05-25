@@ -1,5 +1,7 @@
 - name: Lint Check
   hosts: localhost
+  user: root
+  become: yes
   gather_facts: false
   tasks:
     - name: install ansible lint
