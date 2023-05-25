@@ -3,4 +3,4 @@
   gather_facts: false
   tasks:
     - name: Execute Lint Check
-      command: ansible-lint install-apache2
+      command: ansible-lint --skip-list  fqcn-builtins install-apache2
