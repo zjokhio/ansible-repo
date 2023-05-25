@@ -1,0 +1,22 @@
+- name: Converge
+  hosts: all
+  user: zaheer
+  become: yes
+  roles:
+    - role: "{{ playbook_roles }}"
+      vars:
+        fluentbit_service_flush_seconds: 5
+        fluentbit_service_log_level: info
+        fluentbit_service_enable_metrics: true
+        fluentbit_service_metrics_listen_port: 2020
+        fluentbit_apt_repo: 'deb https://packages.fluentbit.io/debian/buster buster main'
+        fluentbit_inputs:
+          - {"Name": "dummy", "Tag": "dummy.log"}
+        fluentbit_outputs:
+          - {"Name": "stdout", "Match": "*"}
+        fluentbit_additional_conf_files:
+          - name: cpu.conf
+            template: '{{ playbook_dir }}/{{ playbook_roles }}/molecule/default/templates/cpu.conf.j2'
+    - role: install_apache2
+    - role: ansible-role-fluentbit
+
