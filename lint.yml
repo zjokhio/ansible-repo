@@ -4,4 +4,3 @@
   tasks:
     - name: Execute Lint Check
       command: ansible-lint install-apache2
-
