@@ -1,5 +1,7 @@
 - name: Converge
   hosts: all
+  user: zaheer
+  become: yes
   roles:
     - role: ansible-role-fluentbit
       fluentbit_service_flush_seconds: 5
